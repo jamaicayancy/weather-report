@@ -55,7 +55,8 @@ const seasonElement = document.querySelector("#season-image");
 const sunImage1 = document.querySelector("#sun1");
 const sunImage2 = document.querySelector("#sun2");
 const sunImage3 = document.querySelector("#sun3");
-const userInput = document.querySelector("input");
+const userInput = document.querySelector("#user-input");
+const userForm = document.querySelector("#user-form")
 const cityName = document.querySelector("h1.city-banner");
 const skySelect = document.querySelector("#sky-select");
 const reset = document.querySelector("#reset");
@@ -69,7 +70,7 @@ const state = {
 }
 
 // Events
-let displayTemp = () => {
+const displayTemp = () => {
     getTemp(userInput.value);
 }
 const decreaseSky = () => {
@@ -230,5 +231,5 @@ userInput.addEventListener('input', changeCity);
 skySelect.addEventListener("change", changeSkyDropdown);
 reset.addEventListener("click", resetInput);
 displayTempButton.addEventListener("click", displayTemp);
-
+userForm.addEventListener("submit", displayTemp);
 
