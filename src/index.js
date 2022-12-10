@@ -31,8 +31,8 @@ const getTemp = (location) =>{
         .then(function (response) {
             let k = response.data['main']['temp'];
             let f = Math.floor((k-273.15)*1.8)+32;
-            actualTempNumber.innerText=f;
-
+            actualTempNumber.innerText=`It is currently ${f}° in ${location}.`;
+            actualTempNumber.style.color='#FD069A';
         })
         .then(function(){
             console.log(f);
