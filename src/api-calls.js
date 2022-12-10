@@ -43,4 +43,3 @@ const getTemp = (query) =>{
     }
 }
 getTemp('515 w gardena blvd');
-
