@@ -73,6 +73,11 @@ h1 {
     display: flex;
 }
 
+#ac-temp{
+    margin-right:0.5em;
+    margin-left:0.5em;
+}
+
 .top-banner {
     margin-bottom: 1.5em;
     margin-top: 1em;
