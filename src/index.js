@@ -14,7 +14,7 @@ const getTemp = (location) =>{
             let f = Math.floor((k-273.15)*1.8)+32;
             actualTempNumber.innerText=`It is currently ${f}° in ${location}.`;
             actualTempNumber.style.color='#FD069A';
-            actualTempNumber2.innerHTML=`${f}°`;
+            actualTempNumber2.innerText=`${f}°`;
         })
         .then(function(){
             console.log(f);
