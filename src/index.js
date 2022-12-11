@@ -14,6 +14,7 @@ const getTemp = (location) =>{
             let f = Math.floor((k-273.15)*1.8)+32;
             actualTempNumber.innerText=`It is currently ${f}° in ${location}.`;
             actualTempNumber.style.color='#FD069A';
+            actualTempNumber2.innerHTML=`${f}°`;
         })
         .then(function(){
             console.log(f);
@@ -62,6 +63,7 @@ const cityName = document.querySelector("h1.city-banner");
 const skySelect = document.querySelector("#sky-select");
 const reset = document.querySelector("#reset");
 const actualTempNumber = document.querySelector("#the-temp");
+const actualTempNumber2 = document.querySelector("#ac-number")
 const displayTempButton = document.querySelector("#display-temp");
 // States
 const state = {
@@ -70,9 +72,18 @@ const state = {
 }
 // Events
 const displayTemp = () => {
-    getTemp(userInput.value);
+    if (userInput.value.length < 1){
+        actualTempNumber.innerText="Please enter a city name.";
+    }
+    else {
+        getTemp(userInput.value);
+    }
     userInput.value='';
-}
+};
+const displayComptonTemp = () => {
+    getTemp("Compton, California");
+    userInput.value='';
+};
 const decreaseSky = () => {
     if (state.sky == "Sunny"){
         state.sky = "Partly Cloudy";
@@ -215,7 +226,7 @@ const resetInput = () => {
     skySelect.value="sunny";
     desiredSky.innerHTML="Sunny";
     makeItSunny();
-    actualTempNumber.innerText='';
+    actualTempNumber2.innerText=displayComptonTemp();
 }
 // Event listeners
 upTempElement.addEventListener("click", increaseTemp);
@@ -231,3 +242,4 @@ reset.addEventListener("click", resetInput);
 displayTempButton.addEventListener("click", displayTemp);
 userInput.addEventListener('input', changeCity);
 userForm.addEventListener("submit", displayTemp);
+window.addEventListener("load", displayComptonTemp);

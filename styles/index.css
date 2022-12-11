@@ -22,6 +22,9 @@ h4,p,.footer {
     font-size: 1.5em;
 }
 
+#the-temp {
+    font-style:italic;
+}
 h2 {
     font-size: 2.5em;
     text-align: center;
@@ -161,8 +164,12 @@ select {
     padding-top: 2em;
 }
 
+#mid-bottom-duo {
+    width:100%;
+}
+
 /* Colors for discussing Java Script with classmates. */
-/* #up-temp {
+#up-temp {
     background-color: orange;
 }
 
@@ -179,7 +186,7 @@ select {
 }
 
 #desired-temp {
-    background-color: red;
+    background-color:pink;
 }
 
 #actual-temp {
@@ -187,11 +194,11 @@ select {
 }
 
 #desired-sky {
-    background-color: green;
+    background-color: greenyellow;
 }
 
 #sun-1 {
-    background-color: yellowgreen;
+    background-color: red;
 }
 
 #sun-2 {
@@ -219,13 +226,21 @@ select {
 }
 
 .banner {
-    background-color: pink;
+    background-color: violet;
 }
 
 .temp-display {
     background-color: orange;
-} */
+}
 
-/* #up-temp,#down-temp,#up-sky,#down-sky,#desired-temp,#actual-temp,#desired-sky,#sun-1,#sun-2,#sun-3,.arrows,.api-weather,.top-banner,.sun, .banner,.temp-display {
+.footer {
+    background-color: coral;
+}
+
+#mid-bottom-duo {
+    background-color: yellow;
+}
+
+#up-temp,#down-temp,#up-sky,#down-sky,#desired-temp,#actual-temp,#desired-sky,#sun-1,#sun-2,#sun-3,.arrows,.api-weather,.top-banner,.sun, .banner,.temp-display,.footer,#mid-bottom-duo {
     background-color: white;
-} */
+}
