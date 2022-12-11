@@ -1,24 +1,5 @@
 // API Calls
 const getTemp = (location) =>{
-    const getCoordinates = () => {
-        axios
-        .get('http://127.0.0.1:5000/location', {
-            params: { 
-                key: 'pk.3af299d6e0524830860d19ff1c6cc8bf',
-                q: location,
-                format: 'json'
-            },},
-        )
-        .then(function (response) {
-            let lat = response.data[0]['lat'];
-            let lon = response.data[0]['lon'];
-            getWeather(lat,lon);
-        })
-        .catch(function (error) {
-            console.error(error);
-        });
-    }
-    getCoordinates()
     const getWeather = (lat,long) => {
         axios
         .get('http://127.0.0.1:5000/weather', {
@@ -42,13 +23,33 @@ const getTemp = (location) =>{
             console.error(error);
         });
     }
-}
+    const getCoordinates = () => {
+        axios
+        .get('http://127.0.0.1:5000/location', {
+            params: { 
+                key: 'pk.3af299d6e0524830860d19ff1c6cc8bf',
+                q: location,
+                format: 'json'
+            },},
+        )
+        .then(function (response) {
+            let lat = response.data[0]['lat'];
+            let lon = response.data[0]['lon'];
+            getWeather(lat,lon);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+    }
+    getCoordinates()
 
+    
+}
 // Element selectors
 const upTempElement = document.querySelector("#up-temp");
 const downTempElement = document.querySelector("#down-temp");
 const desiredTemp = document.querySelector("#changing-number");
-const desiredSky = document.querySelector("#sky");
+const desiredSky = document.querySelector(".sky");
 const upSky = document.querySelector("#up-sky");
 const downSky = document.querySelector("#down-sky");
 const seasonElement = document.querySelector("#season-image");
@@ -62,16 +63,15 @@ const skySelect = document.querySelector("#sky-select");
 const reset = document.querySelector("#reset");
 const actualTempNumber = document.querySelector("#the-temp");
 const displayTempButton = document.querySelector("#display-temp");
-
 // States
 const state = {
     temperature: 75,
     sky: "Sunny",
 }
-
 // Events
 const displayTemp = () => {
     getTemp(userInput.value);
+    userInput.value='';
 }
 const decreaseSky = () => {
     if (state.sky == "Sunny"){
@@ -217,7 +217,6 @@ const resetInput = () => {
     makeItSunny();
     actualTempNumber.innerText='';
 }
-
 // Event listeners
 upTempElement.addEventListener("click", increaseTemp);
 upTempElement.addEventListener("click", changeSeason);
@@ -227,9 +226,8 @@ upSky.addEventListener("click", increaseSky);
 upSky.addEventListener("click", changeSkyImage);
 downSky.addEventListener("click", decreaseSky);
 downSky.addEventListener("click", changeSkyImage);
-userInput.addEventListener('input', changeCity);
 skySelect.addEventListener("change", changeSkyDropdown);
 reset.addEventListener("click", resetInput);
 displayTempButton.addEventListener("click", displayTemp);
+userInput.addEventListener('input', changeCity);
 userForm.addEventListener("submit", displayTemp);
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,68 +12,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="very-top-banner">
+    <div class="very-top-banner">
         <div id="welcome">
             <button id="reset">Reset City</button>
-        </div>  
+        </div>
         <h1 class="city-banner">Compton, California</h1>
     </div>
-    <div id="main">
-        <div id="top-banner">
-            <div id="api-weather">
-                <form id="user-form" onsubmit="return false">
-                    <input type="text" id="user-input">
-                    <p>Please enter your city.</p>
-                </form>
-                <div id="display-actual-temp">
-                    <button id="display-temp">Display Actual Temp.</button>
-                    <p id="the-temp"></p>
-                </div>
-            </div>
-                
-            <div id="season">
-                <img id="season-image" src="photos/summer1.png">
+    <div class="top-banner">
+        <div class="api-weather">
+            <form id="user-form" onsubmit="return false">
+                <input type="text" id="user-input">
+                <p>Please enter your city.</p>
+            </form>
+            <div id="display-actual-temp">
+                <button class="temp-display" id="display-temp">Display Actual Temp.</button>
+                <p id="the-temp"></p>
             </div>
         </div>
-        <div id="banner">
-            <div class="sun" id="sun-1">
-                <img id="sun1" src="photos/verySunny.png">
+        <div class="season">
+            <img id="season-image" src="photos/summer1.png">
+        </div>
+    </div>
+    <div class="banner">
+        <div class="sun" id="sun-1">
+            <img id="sun1" src="photos/verySunny.png">
+        </div>
+        <div class="sun" id="sun-2">
+            <img id="sun2" src="photos/verySunny.png">
+        </div>
+        <div class="sun" id="sun-3">
+            <img id="sun3" id="testing" src="photos/verySunny.png">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="temp" id="desired-temp">
+            <div class="bottom-duo">
+                <h3 class="headers">Desired Temp.</h3>
+                <h2 class="number" id="changing-number">75°</h2>
             </div>
-            <div class="sun" id="sun-2">
-                <img id="sun2" src="photos/verySunny.png">
-            </div>
-            <div class="sun" id="sun-3">
-                <img id="sun3" id="testing" src="photos/verySunny.png">
+            <div class="arrows">
+                <button id="up-temp">
+                    <div class="arrow arrow-up">
+                        ^
+                    </div>
+                </button>
+                <button id="down-temp">
+                    <div class="arrow arrow-down">
+                        ^
+                    </div>
+                </button>
             </div>
         </div>
-
-        <div id="bottom">
-
-            <div class="temp" id="desired-temp">
-                <div class="bottom-duo">
-                    <h3 class="headers">Desired Temp.</h3>
-                    <h2 class="number" id="changing-number">75°</h2>
-                </div>
-                <div class="arrows">
-                    <button id="up-temp">
-                        <div class="arrow arrow-up">
-                            ^
-                        </div>
-                    </button>
-                    <button id="down-temp">
-                        <div class="arrow arrow-down">
-                            ^
-                        </div>
-                    </button>
-                </div>
+        <div class="temp" id="desired-sky">
+            <div class="bottom-duo">
+                <h3 class="headers">Desired Sky</h3>
+                <h2 class="sky">Sunny</h2>
             </div>
-
-            <div class="temp" id="desired-sky">
-                <div class="bottom-duo">
-                    <h3 class="headers">Desired Sky</h3>
-                    <h2 id="sky">Sunny</h2>
-                </div>
             <div class="arrows">
                 <button id="up-sky">
                     <div class="arrow arrow-up">
@@ -87,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div id="footer">
+    <div class="footer">
         <label for="sky-select">Describe the sky in your home town:</label>
         <select name="skies" id="sky-select">
             <option value="">--Please choose an option--</option>
@@ -100,4 +97,5 @@
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script src="src/index.js"></script>
 </body>
+
 </html>
